@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from 'react'
 import { fakeFetchCrypto, fetchAssets } from '../api'
 import { percentDifference } from '../utils'
+import { useContext } from 'react'
 
 const CryptoContext = createContext({
 	assets: [],
@@ -45,3 +46,7 @@ export function CryptoContextProvider({ children }) {
 }
 
 export default CryptoContext
+
+export function UseCrypto() {
+	return useContext(CryptoContext)
+}
